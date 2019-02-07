@@ -1,6 +1,6 @@
-const moongose = require('moongose');
+const mongoose = require('mongoose');
 
-const TweetSchema = new moongose.Schema({
+const TweetSchema = new mongoose.Schema({
     author: String,
     content: String,
     likes: {
@@ -13,4 +13,4 @@ const TweetSchema = new moongose.Schema({
     },
 });
 
-module.exports = moongose.model("Tweet", TweetSchema);
+module.exports = mongoose.model("Tweet", TweetSchema);
