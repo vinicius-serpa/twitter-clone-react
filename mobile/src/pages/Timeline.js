@@ -12,14 +12,14 @@ export default class Timeline extends Component {
         tweets: []
     };
 
-    static navigationOptions = {
+    static navigationOptions = ({ navigation }) => ({
         title: "Inicio",
         headerRight: (
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate('New')}>
                 <Icon style={{ marginRight: 20 }} name="add-circle-outline" size={24} color="#4BB0EE"></Icon>
             </TouchableOpacity>
         )
-    };
+    });
 
     async componentDidMount() {
         const response = await api.get('tweets');
